@@ -8,6 +8,11 @@ import os
 org_dir = "dataset/01-org/"
 face_dir = "dataset/02-face/"
 
+# OpenCV検出サイズ定義
+cv_width, cv_height = 64, 64
+# 顔画像サイズ定義
+img_width, img_height = 64, 64
+
 # 顔検出用カスケードxmlファイルパス定義
 cascade_xml = "lbpcascade_animeface.xml"
 
@@ -51,15 +56,15 @@ def detect_face(org_char_dir, face_char_dir):
         # 見落としを抑えるため、最初は低精度で検出。徐々に精度を上げていく。
         for i_mn in range(1, 7, 1):
             # 顔検出
-            face_list = cascade.detectMultiScale(image_gs, scaleFactor=1.1, minNeighbors=i_mn, minSize=(200, 200))
+            face_list = cascade.detectMultiScale(image_gs, scaleFactor=1.1, minNeighbors=i_mn, minSize=(cv_width, cv_height))
 
-            # 顔が1つ以上検出された場合、64x64のサイズで取得
+            # 顔が1つ以上検出された場合、img_width x img_heightの設定サイズで取得
             if len(face_list) > 0:
                 for rect in face_list:
                     image = org_image[rect[1]:rect[1]+rect[3],rect[0]:rect[0]+rect[2]]
-                    if image.shape[0] < 64 or image.shape[1] < 64:
+                    if image.shape[0] < img_width or image.shape[1] < img_height:
                         continue
-                    face_image = cv2.resize(image,(64,64))
+                    face_image = cv2.resize(image,(img_width, img_height))
             # 顔が検出されなかった場合スキップして次の画像へ
             else:
                 print("no face")

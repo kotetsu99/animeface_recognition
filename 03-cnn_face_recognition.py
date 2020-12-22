@@ -6,6 +6,10 @@ import numpy as np
 import cv2
 import os, sys
 
+# OpenCV検出サイズ定義
+cv_width, cv_height = 64, 64
+# OpenCV検出閾値
+minN = 15
 # 顔画像サイズ定義
 img_width, img_height = 64, 64
 # 学習用データセットのディレクトリパス
@@ -60,14 +64,14 @@ def detect_face(image, model):
     cascade = cv2.CascadeClassifier(cascade_xml)
 
     # 顔検出の実行
-    face_list=cascade.detectMultiScale(image_gs, scaleFactor=1.1, minNeighbors=2,minSize=(120, 120))
+    face_list=cascade.detectMultiScale(image_gs, scaleFactor=1.01, minNeighbors=minN, minSize=(cv_width,cv_height), maxSize=(512,512))
 
     # 顔が1つ以上検出された場合
     if len(face_list) > 0:
         for rect in face_list:
             # 顔画像を生成
             face_img = image[rect[1]:rect[1]+rect[3],rect[0]:rect[0]+rect[2]]
-            if face_img.shape[0] < 64 or face_img.shape[1] < 64:
+            if face_img.shape[0] < img_width or face_img.shape[1] < img_height:
                 print("too small")
                 continue
             # 顔画像とサイズを定義
@@ -82,7 +86,7 @@ def detect_face(image, model):
             cv2.rectangle(image, tuple(rect[0:2]), tuple(rect[0:2]+rect[2:4]), (0, 0, 255), thickness = 3)
             # AIの認識結果(キャラ名)を元画像に矩形付きで表示
             x, y, width, height = rect
-            cv2.putText(image, name, (x, y + height + 80), cv2.FONT_HERSHEY_DUPLEX, 3, (0, 0, 255) ,2)
+            cv2.putText(image, name, (x, y + height + 60), cv2.FONT_HERSHEY_DUPLEX, 2, (0, 0, 255) ,2)
     # 顔が検出されなかった場合
     else:
         print("no face")

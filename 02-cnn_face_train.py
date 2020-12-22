@@ -21,11 +21,11 @@ img_width, img_height = 64, 64
 # バッチサイズ
 batch_size = 4
 # エポック数（1エポックの画像サンプル数 = ステップ数 * バッチサイズ）
-nb_epoch = 200
+nb_epoch = 2
 
 # 収束判定ループ（エポック）回数
-nb_patience = 10
-#nb_patience = nb_epoch
+#nb_patience = 10
+nb_patience = nb_epoch
 # 収束判定用差分パラメータ
 val_min_delta = 0.001
 
@@ -61,7 +61,7 @@ def main():
         cnn_model = cnn_model_maker(nb_classes)
         # 多クラス分類を指定
         cnn_model.compile(loss='categorical_crossentropy',
-                  optimizer=keras.optimizers.Adadelta(),
+                  optimizer='adam',
                   metrics=['accuracy'])
 
     # 画像のジェネレータ生成
