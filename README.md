@@ -14,6 +14,7 @@
 
 ・解説： https://nine-num-98.blogspot.com/2019/12/ai-lovelive-02.html
 
+・応用例： https://nine-num-98.blogspot.com/2020/12/anigasaki-ai-01.html
 
 
 # 留意事項
