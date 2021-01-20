@@ -1,7 +1,7 @@
 # 概要
 
-ラブライブ！のソーシャルゲーム「[スクールアイドルフェスティバル ALL STARS](https://lovelive-as.bushimo.jp/)」、通称「スクスタ」に登場する
-スクールアイドルの顔を学習させ、ゲーム画面中から彼女たちの顔を検出、さらに名前を併記するAI（Python）プログラムです。
+ラブライブ！のソーシャルゲーム「[スクールアイドルフェスティバル ALL STARS](https://lovelive-as.bushimo.jp/)」、「[ラブライブ！虹ヶ咲学園スクールアイドル同好会](http://www.lovelive-anime.jp/nijigasaki/)」に登場する
+メンバーの顔を学習させ、画像から彼女たちの顔を検出、さらに名前を併記するAI（Python）プログラムです。
 一般的なアニメキャラの顔認識にも応用可能です。
 
 
@@ -10,11 +10,13 @@
 
 こちらのブログ記事をご確認ください。
 
-・使用方法： https://nine-num-98.blogspot.com/2019/12/ai-lovelive-01.html
+・使用方法：
+https://nine-num-98.blogspot.com/2019/12/ai-lovelive-01.html
+https://nine-num-98.blogspot.com/2020/12/anigasaki-ai-01.html
 
-・解説： https://nine-num-98.blogspot.com/2019/12/ai-lovelive-02.html
+・解説：
+https://nine-num-98.blogspot.com/2019/12/ai-lovelive-02.html
 
-・応用例： https://nine-num-98.blogspot.com/2020/12/anigasaki-ai-01.html
 
 
 # 留意事項
