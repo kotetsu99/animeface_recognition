@@ -1,6 +1,6 @@
 # 概要
 
-ラブライブ！のソーシャルゲーム「[スクールアイドルフェスティバル ALL STARS](https://lovelive-as.bushimo.jp/)」、「[ラブライブ！虹ヶ咲学園スクールアイドル同好会](http://www.lovelive-anime.jp/nijigasaki/)」に登場するメンバーの顔を学習させ、画像から彼女たちの顔を検出、さらに名前を併記するAI（Python）プログラムです。
+ラブライブ！のソーシャルゲーム「[スクールアイドルフェスティバル ALL STARS](https://lovelive-as.bushimo.jp/)」、アニメ「[ラブライブ！虹ヶ咲学園スクールアイドル同好会](http://www.lovelive-anime.jp/nijigasaki/)」に登場するメンバーの顔を学習させ、画像から彼女たちの顔を検出、さらに名前を併記するAI（Python）プログラムです。
 一般的なアニメキャラの顔認識にも応用可能です。
 
 
